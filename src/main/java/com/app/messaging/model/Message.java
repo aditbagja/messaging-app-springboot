@@ -3,9 +3,7 @@ package com.app.messaging.model;
 import java.sql.Timestamp;
 import java.util.UUID;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 
 @Data
@@ -17,6 +15,8 @@ public class Message {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID messageId;
 
+    private String sender;
+    private String receiver;
     private String messageContent;
     private Timestamp createdAt;
 }
